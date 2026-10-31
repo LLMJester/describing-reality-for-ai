@@ -1,0 +1,4986 @@
+{
+ "stage1_founders": {
+  "A0P": {
+   "genes": {
+    "core": {
+     "kind": "prose",
+     "params": {
+      "v2_arm": "A0+"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Reason step by step in plain language, then answer.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "A0P",
+   "notes": "ported from v2 arm A0+",
+   "id": "g8e2dd9d60dc",
+   "gene_hashes": {
+    "core": "56f19b0466f0",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "6cbb81b825d6",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "SEC_A1": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "ENTITIES",
+       "STATE",
+       "MECHANISMS",
+       "CAUSAL LINKS",
+       "TIMING",
+       "UNCERTAINTY"
+      ],
+      "tags": true,
+      "granularity": "coarse"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "stepwise_checked",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Describe the system in plain language under the section headers, one element per bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "SEC_A1",
+   "notes": "structured prose: v2 arm A1 sections and provenance tags",
+   "id": "g56e144cc15f",
+   "gene_hashes": {
+    "core": "6b7f81c49552",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "47ab9039759e",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b62e042255d4",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "ONT_LOOSE": {
+   "genes": {
+    "core": {
+     "kind": "ontology",
+     "params": {
+      "headers": [
+       "THINGS",
+       "HIERARCHY",
+       "RELATIONSHIPS",
+       "RULES",
+       "NOTES"
+      ],
+      "relations": [
+       "causes",
+       "increases",
+       "decreases",
+       "drives",
+       "requires",
+       "prevents",
+       "precedes",
+       "contains",
+       "produces",
+       "consumes",
+       "depends on"
+      ],
+      "hierarchy": [
+       "is_a",
+       "part_of"
+      ],
+      "max_depth": 4,
+      "strict": false
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [
+     "explain",
+     "what_if"
+    ],
+    "guidance": {
+     "text": "Describe the system in plain sentences; use the ontology forms for key facts and plain notes for the rest, then query it.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "ONT_LOOSE",
+   "notes": "loose plain-text ontology: grammar for key facts, free notes for the rest (V3-009)",
+   "id": "gd3ff35d9c64",
+   "gene_hashes": {
+    "core": "5d4e6aa528fb",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "081e94208000",
+    "guidance": "5cf4c46d6127",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "SEC_FLOW": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "PURPOSE",
+       "PARTS",
+       "FLOWS",
+       "RULES",
+       "TIMELINE",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "coarse"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "template_first",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Describe the system in plain language under the section headers, one element per bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "SEC_FLOW",
+   "notes": "structured prose: purpose, parts, flows, rules, timeline, unknowns",
+   "id": "g71a939eeeb0",
+   "gene_hashes": {
+    "core": "01a421c0916a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "12957c462d32",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b62e042255d4",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "G1C3": {
+   "genes": {
+    "core": {
+     "kind": "equations",
+     "params": {
+      "v2_arm": "G1C3"
+     }
+    },
+    "schema": {
+     "fields": [
+      "variables",
+      "units",
+      "parameters",
+      "assumptions"
+     ]
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [
+     "what_if",
+     "explain",
+     "trajectory"
+    ],
+    "guidance": {
+     "text": "Write the whole system as named variables with explicit equations, then query the model.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "G1C3",
+   "notes": "ported from v2 arm G1C3",
+   "id": "gee51e8a8886",
+   "gene_hashes": {
+    "core": "c98f7169e23c",
+    "schema": "3c405b52a07e",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "eefccea03aa5",
+    "guidance": "62c3482e7f89",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "A5": {
+   "genes": {
+    "core": {
+     "kind": "rules",
+     "params": {
+      "v2_arm": "A5"
+     }
+    },
+    "schema": {
+     "fields": [
+      "variables",
+      "assumptions"
+     ]
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [
+     "what_if",
+     "explain"
+    ],
+    "guidance": {
+     "text": "Write the system as logical rules and facts, then query them.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "A5",
+   "notes": "ported from v2 arm A5",
+   "id": "gc92cb36fadb",
+   "gene_hashes": {
+    "core": "82a1f5de8eb7",
+    "schema": "7ce26f9ab593",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "fbf334d6a716",
+    "guidance": "ef9d34ccc14c",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "FACTS": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "FACTS",
+   "notes": "key-value fact lines, one fact per bullet (research: compact facts and key-value lists aid lookup)",
+   "id": "gd6f99b53eb9",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "STATES": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "PARTS",
+       "STATES",
+       "EVENTS",
+       "TRANSITIONS",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "coarse"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Describe the system as a state machine. STATES: each part's possible states or value range and its starting state. EVENTS: what can happen and when it counts as happening. TRANSITIONS: one bullet per rule, written 'WHEN <event> [IF <condition>] THEN <part> -> <new state or change>'. TIMING: delays and durations. UNKNOWNS: what the description leaves open.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "STATES",
+   "notes": "state machine with WHEN/IF/THEN transitions (research: explicit state tracking)",
+   "id": "g6e3bc19502e",
+   "gene_hashes": {
+    "core": "326da1c141dd",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b8a2e7390a1c",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "SPEC": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "CONTEXT",
+       "COMPONENTS",
+       "INTERFACES",
+       "REQUIREMENTS",
+       "CONSTRAINTS",
+       "OPEN QUESTIONS"
+      ],
+      "tags": false,
+      "granularity": "coarse"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "template_first",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write the system as a specification for someone who will build it. REQUIREMENTS: one bullet per behaviour in EARS form: 'WHEN <trigger> THE SYSTEM SHALL <response>', 'WHILE <state> THE SYSTEM SHALL <response>', 'IF <condition> THEN <part> SHALL <response>', with exact values and timings. COMPONENTS and INTERFACES: the parts and what passes between them, with quantities.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "SPEC",
+   "notes": "EARS-style build specification (research: spec-driven development for AI builders)",
+   "id": "gfec66daacee",
+   "gene_hashes": {
+    "core": "b4c04f0fac74",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "12957c462d32",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "53cb962e42d3",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "A2": {
+   "genes": {
+    "core": {
+     "kind": "graph",
+     "params": {
+      "v2_arm": "A2"
+     }
+    },
+    "schema": {
+     "fields": [
+      "variables",
+      "assumptions",
+      "interventions"
+     ]
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [
+     "what_if",
+     "explain"
+    ],
+    "guidance": {
+     "text": "Write the system as a causal graph with signed edges, then trace interventions.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "A2",
+   "notes": "ported from v2 arm A2",
+   "id": "g12c9be0d72f",
+   "gene_hashes": {
+    "core": "cf4f0cc514fd",
+    "schema": "91b5a56e10cd",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "fbf334d6a716",
+    "guidance": "7a1462cf3c9e",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "A3": {
+   "genes": {
+    "core": {
+     "kind": "simulation",
+     "params": {
+      "v2_arm": "A3"
+     }
+    },
+    "schema": {
+     "fields": [
+      "variables",
+      "parameters",
+      "time_scale"
+     ]
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [
+     "what_if",
+     "trajectory"
+    ],
+    "guidance": {
+     "text": "Write a step-by-step simulation of the system and run it.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "A3",
+   "notes": "ported from v2 arm A3",
+   "id": "g05357a6e1a0",
+   "gene_hashes": {
+    "core": "844d22f4ffda",
+    "schema": "11f637213d7e",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "6929d3092b7b",
+    "guidance": "391664e6e02e",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "G1C1": {
+   "genes": {
+    "core": {
+     "kind": "probabilistic",
+     "params": {
+      "v2_arm": "G1C1"
+     }
+    },
+    "schema": {
+     "fields": [
+      "variables",
+      "parameters",
+      "assumptions",
+      "uncertainty"
+     ]
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [
+     "what_if",
+     "sensitivity"
+    ],
+    "guidance": {
+     "text": "Write a parameterised probabilistic program; a what-if is a re-run with overridden parameters.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "G1C1",
+   "notes": "ported from v2 arm G1C1",
+   "id": "gb16a94429ec",
+   "gene_hashes": {
+    "core": "f7f297a1b136",
+    "schema": "708b7560d574",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "0425d21aaf1d",
+    "guidance": "b7546c86d35e",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "JSON": {
+   "genes": {
+    "core": {
+     "kind": "json",
+     "params": {
+      "keys": [
+       "things",
+       "quantities",
+       "links",
+       "events",
+       "rules",
+       "unknowns"
+      ],
+      "max_depth": 4
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [
+     "explain",
+     "compare"
+    ],
+    "guidance": {
+     "text": "Write the system as one JSON object a program could read. things: one object per part or actor, with name, kind and what it does. quantities: one object per measured value, with thing, name, value, unit and when it holds. links: one object per connection or cause, with from, to, relation and condition. events: one object per thing that happens, with when, what and effect. rules: one string per rule, written 'if <condition> then <consequence>'. unknowns: one string per thing the description leaves open. Use the exact names, numbers and units from the description; never invent a value.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "JSON",
+   "notes": "one checked JSON object: things, quantities, links, events, rules, unknowns (human, run 5)",
+   "id": "gb61459be54d",
+   "gene_hashes": {
+    "core": "0522e7a2c203",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "1d80332e3fb2",
+    "guidance": "835926542300",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "MARKDOWN": {
+   "genes": {
+    "core": {
+     "kind": "markdown",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "LINKS",
+       "EVENTS",
+       "RULES",
+       "UNKNOWNS"
+      ],
+      "tables": [
+       "THINGS",
+       "VALUES",
+       "LINKS",
+       "EVENTS"
+      ]
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [
+     "explain",
+     "compare"
+    ],
+    "guidance": {
+     "text": "Write the system as Markdown tables a person could scan. THINGS: columns name | kind | what it does. VALUES: columns thing | quantity | value | unit | when. LINKS: columns from | relation | to | condition. EVENTS: columns when | what happens | effect. RULES: one bullet per rule, written 'if <condition> then <consequence>'. UNKNOWNS: one bullet per thing the description leaves open. Use the exact names, numbers and units from the description; never invent a value.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "MARKDOWN",
+   "notes": "checked Markdown: tables for things, values, links, events; rule bullets (human, run 5)",
+   "id": "gd321244f1e6",
+   "gene_hashes": {
+    "core": "a5714483cbf9",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "1d80332e3fb2",
+    "guidance": "58e4ebef3e67",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "OWN": {
+   "genes": {
+    "core": {
+     "kind": "prose",
+     "params": {
+      "v2_arm": "A0+"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write notes about this system in whatever form you judge best for answering questions about it later.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "OWN",
+   "notes": "ported from v2 arm A0+",
+   "id": "g309dc26f9a6",
+   "gene_hashes": {
+    "core": "56f19b0466f0",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "4b2b30ec98aa",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "BLIND": {
+   "genes": {
+    "core": {
+     "kind": "prose",
+     "params": {
+      "v2_arm": "A0+"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "BLIND baseline: no notes are written; the question is answered from the question alone.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "BLIND",
+   "notes": "ported from v2 arm A0+",
+   "id": "g5364530baf7",
+   "gene_hashes": {
+    "core": "56f19b0466f0",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "8c43240f764b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  }
+ },
+ "stage2": {
+  "D01": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "FACTS",
+   "notes": "key-value fact lines, one fact per bullet (research: compact facts and key-value lists aid lookup)",
+   "id": "gd6f99b53eb9",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D02": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-02 A+B-C-D-E-",
+   "notes": "run 5 stage 2 design 2",
+   "id": "g57215182b2a",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D03": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-03 A-B+C-D-E-",
+   "notes": "run 5 stage 2 design 3",
+   "id": "g93db494ee8a",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D04": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-04 A+B+C-D-E-",
+   "notes": "run 5 stage 2 design 4",
+   "id": "g18d993b59ec",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D05": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-05 A-B-C+D-E-",
+   "notes": "run 5 stage 2 design 5",
+   "id": "ga53162ca5f8",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D06": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-06 A+B-C+D-E-",
+   "notes": "run 5 stage 2 design 6",
+   "id": "gea61fdf642c",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D07": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-07 A-B+C+D-E-",
+   "notes": "run 5 stage 2 design 7",
+   "id": "gdf2c94d500a",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D08": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-08 A+B+C+D-E-",
+   "notes": "run 5 stage 2 design 8",
+   "id": "g3797a5b6320",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D09": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "THINGS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\nVALUES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Farm.V1.flow: unknown\n- Lab.F1.setpoint: -20 C\nRULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nLINKS\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-09 A-B-C-D+E-",
+   "notes": "run 5 stage 2 design 9",
+   "id": "g896cc924122",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "4c22eeb36af5",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D10": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "SYSTEMS & PARTS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nQUANTITIES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Lab.F1.setpoint: -20 C\nCAUSES & RULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger\nUNKNOWNS\n- Farm.V1.flow: unknown"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-10 A+B-C-D+E-",
+   "notes": "run 5 stage 2 design 10",
+   "id": "g92a10ae491d",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "7b77ec8f5ef8",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D11": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "THINGS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\nVALUES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Farm.V1.flow: unknown\n- Lab.F1.setpoint: -20 C\nRULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nLINKS\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-11 A-B+C-D+E-",
+   "notes": "run 5 stage 2 design 11",
+   "id": "gfd6ec193293",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "1737b3036f9b",
+    "examples": "4c22eeb36af5",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D12": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "SYSTEMS & PARTS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nQUANTITIES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Lab.F1.setpoint: -20 C\nCAUSES & RULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger\nUNKNOWNS\n- Farm.V1.flow: unknown"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-12 A+B+C-D+E-",
+   "notes": "run 5 stage 2 design 12",
+   "id": "gf010a1f790a",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "1737b3036f9b",
+    "examples": "7b77ec8f5ef8",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D13": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "THINGS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\nVALUES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Farm.V1.flow: unknown\n- Lab.F1.setpoint: -20 C\nRULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nLINKS\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger"
+     ]
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-13 A-B-C+D+E-",
+   "notes": "run 5 stage 2 design 13",
+   "id": "g9eafeaa49f8",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "4c22eeb36af5",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D14": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "SYSTEMS & PARTS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nQUANTITIES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Lab.F1.setpoint: -20 C\nCAUSES & RULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger\nUNKNOWNS\n- Farm.V1.flow: unknown"
+     ]
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-14 A+B-C+D+E-",
+   "notes": "run 5 stage 2 design 14",
+   "id": "g31f6ccad515",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "7b77ec8f5ef8",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D15": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "THINGS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\nVALUES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Farm.V1.flow: unknown\n- Lab.F1.setpoint: -20 C\nRULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nLINKS\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger"
+     ]
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-15 A-B+C+D+E-",
+   "notes": "run 5 stage 2 design 15",
+   "id": "g05945b11456",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "1737b3036f9b",
+    "examples": "4c22eeb36af5",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D16": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "SYSTEMS & PARTS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nQUANTITIES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Lab.F1.setpoint: -20 C\nCAUSES & RULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger\nUNKNOWNS\n- Farm.V1.flow: unknown"
+     ]
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-16 A+B+C+D+E-",
+   "notes": "run 5 stage 2 design 16",
+   "id": "g121ffe0ea35",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "1737b3036f9b",
+    "examples": "7b77ec8f5ef8",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D17": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-17 A-B-C-D-E+",
+   "notes": "run 5 stage 2 design 17",
+   "id": "g953100969dc",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "f31a4b7e1577",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D18": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-18 A+B-C-D-E+",
+   "notes": "run 5 stage 2 design 18",
+   "id": "g29efa04bd8a",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "f31a4b7e1577",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D19": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-19 A-B+C-D-E+",
+   "notes": "run 5 stage 2 design 19",
+   "id": "g53131ce089e",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "f31a4b7e1577",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D20": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-20 A+B+C-D-E+",
+   "notes": "run 5 stage 2 design 20",
+   "id": "g2a405f03cde",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "f31a4b7e1577",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D21": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-21 A-B-C+D-E+",
+   "notes": "run 5 stage 2 design 21",
+   "id": "g11452775da5",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "f31a4b7e1577",
+    "examples": "8d71a6d2e4f4",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D22": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-22 A+B-C+D-E+",
+   "notes": "run 5 stage 2 design 22",
+   "id": "g2904f0e8ef5",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "f31a4b7e1577",
+    "examples": "8d71a6d2e4f4",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D23": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-23 A-B+C+D-E+",
+   "notes": "run 5 stage 2 design 23",
+   "id": "g01353d5e358",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "f31a4b7e1577",
+    "examples": "8d71a6d2e4f4",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D24": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-24 A+B+C+D-E+",
+   "notes": "run 5 stage 2 design 24",
+   "id": "g6a97968546e",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "f31a4b7e1577",
+    "examples": "8d71a6d2e4f4",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D25": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "THINGS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\nVALUES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Farm.V1.flow: unknown\n- Lab.F1.setpoint: -20 C\nRULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nLINKS\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-25 A-B-C-D+E+",
+   "notes": "run 5 stage 2 design 25",
+   "id": "g8c91b0dab06",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "f31a4b7e1577",
+    "examples": "4c22eeb36af5",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D26": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "SYSTEMS & PARTS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nQUANTITIES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Lab.F1.setpoint: -20 C\nCAUSES & RULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger\nUNKNOWNS\n- Farm.V1.flow: unknown"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-26 A+B-C-D+E+",
+   "notes": "run 5 stage 2 design 26",
+   "id": "g2b0566c2a72",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "f31a4b7e1577",
+    "examples": "7b77ec8f5ef8",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D27": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "THINGS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\nVALUES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Farm.V1.flow: unknown\n- Lab.F1.setpoint: -20 C\nRULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nLINKS\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-27 A-B+C-D+E+",
+   "notes": "run 5 stage 2 design 27",
+   "id": "g263ed4ed83c",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "f31a4b7e1577",
+    "examples": "4c22eeb36af5",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D28": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "SYSTEMS & PARTS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nQUANTITIES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Lab.F1.setpoint: -20 C\nCAUSES & RULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger\nUNKNOWNS\n- Farm.V1.flow: unknown"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-28 A+B+C-D+E+",
+   "notes": "run 5 stage 2 design 28",
+   "id": "g14d64e0ea8a",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "f31a4b7e1577",
+    "examples": "7b77ec8f5ef8",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D29": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "THINGS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\nVALUES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Farm.V1.flow: unknown\n- Lab.F1.setpoint: -20 C\nRULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nLINKS\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger"
+     ]
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-29 A-B-C+D+E+",
+   "notes": "run 5 stage 2 design 29",
+   "id": "g030b2acde2e",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "f31a4b7e1577",
+    "examples": "4c22eeb36af5",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D30": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "SYSTEMS & PARTS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nQUANTITIES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Lab.F1.setpoint: -20 C\nCAUSES & RULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger\nUNKNOWNS\n- Farm.V1.flow: unknown"
+     ]
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-30 A+B-C+D+E+",
+   "notes": "run 5 stage 2 design 30",
+   "id": "g48b17e8776e",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "f31a4b7e1577",
+    "examples": "7b77ec8f5ef8",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D31": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "THINGS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\nVALUES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Farm.V1.flow: unknown\n- Lab.F1.setpoint: -20 C\nRULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nLINKS\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger"
+     ]
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-31 A-B+C+D+E+",
+   "notes": "run 5 stage 2 design 31",
+   "id": "g066b205edf5",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "f31a4b7e1577",
+    "examples": "4c22eeb36af5",
+    "answering": "0533b81349dc"
+   }
+  },
+  "D32": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS & PARTS",
+       "QUANTITIES",
+       "CAUSES & RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 24,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "SYSTEMS & PARTS\n- Farm.T1: water tank, 1000 L capacity\n- Farm.P1: pump\n- Farm.V1: drain valve on T1\n- Lab.F1: freezer\n- Farm.P1 -> Farm.T1: fills\n- Farm.T1 -> Farm.V1: drains through\nQUANTITIES\n- Farm.T1.level: 40% at start\n- Farm.P1.flow: 50 L/min when on\n- Lab.F1.setpoint: -20 C\nCAUSES & RULES\n- if Farm.T1.level > 90% then Farm.P1 stops\n- if Lab.F1.temp > -15 C then Lab alarm sounds\nTIMING\n- Farm.P1: starts 06:00 daily\n- Lab alarm: delay 5 min after trigger\nUNKNOWNS\n- Farm.V1.flow: unknown"
+     ]
+    },
+    "answering": {
+     "text": "1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n3. For a calculation, write the formula, insert the noted numbers and check the units.\n4. For timing, put the noted events in time order before answering.\n5. Never use a value from another system whose part has a similar name.\n6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n7. Give a short direct answer, with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "factorial",
+   "generation": 0,
+   "island": 0,
+   "name": "S2-32 A+B+C+D+E+",
+   "notes": "run 5 stage 2 design 32",
+   "id": "g774f1ce6659",
+   "gene_hashes": {
+    "core": "3847eaef9d47",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b842cf00580e",
+    "numeric": "f31a4b7e1577",
+    "examples": "7b77ec8f5ef8",
+    "answering": "0533b81349dc"
+   }
+  }
+ },
+ "stage3_screen": {
+  "CUR": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "FACTS",
+   "notes": "key-value fact lines, one fact per bullet (research: compact facts and key-value lists aid lookup)",
+   "id": "gd6f99b53eb9",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s1a1": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES & LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "coarse"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s1a1",
+   "notes": "run 5 stage 3 screen: slot 1 archetype 1",
+   "id": "g11277dc9f5a",
+   "gene_hashes": {
+    "core": "f89ce663cfd3",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s1a2": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "ENTITY IDS",
+       "INPUTS & OUTPUTS",
+       "EDGES",
+       "VALUES",
+       "RULES",
+       "TIMING",
+       "UNKNOWNS"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s1a2",
+   "notes": "run 5 stage 3 screen: slot 1 archetype 2",
+   "id": "g4afd6825c2b",
+   "gene_hashes": {
+    "core": "0baf52eb9089",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s1a3": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING",
+       "UNKNOWNS",
+       "COVERAGE CHECK"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s1a3",
+   "notes": "run 5 stage 3 screen: slot 1 archetype 3",
+   "id": "g078000029dd",
+   "gene_hashes": {
+    "core": "fc754ea2cd14",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s1a4": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "SYSTEMS",
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s1a4",
+   "notes": "run 5 stage 3 screen: slot 1 archetype 4",
+   "id": "gdcdccbcaf59",
+   "gene_hashes": {
+    "core": "25a8b67cc3bc",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s2a1": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "One fact per bullet. Keep each bullet short and plain, for example 'T1.level: 40% at start', 'P1 -> T1: fills' or 'if T1 is above 90% then P1 stops'. Use whatever short form states the fact most clearly; exact wording does not matter. Copy every number with its unit and condition. If the text says something is not known or not given, write it down as unknown. Put each fact where it fits best and do not spend effort on placement.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s2a1",
+   "notes": "run 5 stage 3 screen: slot 2 archetype 1",
+   "id": "g23c52003969",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "d1ad94438c3f",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s2a2": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Give every part a fixed ID and use only that ID afterwards. If the description covers more than one separate plant, network or service, give each one a short letter tag (A, B, C ...). Start every ID with that tag, for example 'A.P1' and 'B.P1', even when the text uses the same part name in both. Declare each part once with one bullet: 'A.P1: pump'. Write each quantity as 'ID.attribute: number unit (condition)', for example 'A.P1.flow: 50 L/min when on'. Write each connection or cause as a directed edge between IDs: 'A.P1 -> A.T1: fills'. For each part that takes something in or puts something out, write one bullet per direction: 'A.P1 in: power from A.G1' and 'A.P1 out: water to A.T1'. Write each condition as 'if ID.attribute op number then effect'. Write each time fact as 'ID: event at/after time'. Write each missing fact as 'ID.attribute: unknown'. Exactly one fact per bullet and under 200 characters. Never list several parts or numbers in one bullet; write one bullet each.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s2a2",
+   "notes": "run 5 stage 3 screen: slot 2 archetype 2",
+   "id": "g66a32522bab",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "435407d5840f",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s2a3": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet: 'name: value unit (condition)' or 'a -> b: relation'. One fact per bullet. Before you save, run this check in your head and fix gaps; do not save in several passes. (1) Go through the description paragraph by paragraph. Every number with a unit, every cause or effect, every condition, every time, delay or order, and every statement that something is unknown or not given must have its own bullet. Add any that are missing. (2) If the text covers several separate setups, every name must show which setup it belongs to. No two setups may share a bare name. (3) Follow each cause chain from the start to the end through your bullets and add any missing step. (4) Any bullet holding two numbers, a list, ';' or 'and' joining two facts gets split into separate bullets. Then save all notes once.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s2a3",
+   "notes": "run 5 stage 3 screen: slot 2 archetype 3",
+   "id": "gd5968d9067e",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "791e0e7ab019",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s2a4": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. When one sentence of the text holds several facts (a list of parts, two numbers, a cause and a time), write a separate bullet for each one. Never join facts with ';', 'and' or commas. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s2a4",
+   "notes": "run 5 stage 3 screen: slot 2 archetype 4",
+   "id": "g69b87799cb1",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "cbabd381457d",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s3a1": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.\n\nBefore saving, reread each line once. If a line states more than one fact, or covers two parts, two numbers or two conditions, split it into separate lines. If a line runs long, shorten or split it. Then save everything in one call. The checker shows only the first problem. When it reports one, fix that line and every other line with the same fault in the same save, then stop once it passes.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s3a1",
+   "notes": "run 5 stage 3 screen: slot 3 archetype 1",
+   "id": "g8c59236daf6",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "186098c3b651",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s3a2": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.\n\nBefore writing, build an inventory in your head or in a scratch draft. Give each separate system in the description a short unique prefix. Give each part, store, signal or actor an identifier made of that prefix and a short part name, and use exactly that identifier everywhere afterwards. Never reuse a bare part name across two systems, even when the text does. For each part, list what enters it, what leaves it, what it controls and what controls it. Each such pair becomes one relation fact naming both identifiers. Write the notes into the existing sections only, one system's facts grouped together within each section. Before saving, check four things. First, every identifier used in a relation or condition is declared once as a part. Second, every declared part appears in at least one other fact. Third, no fact mixes identifiers from two systems unless the text states a cross-system connection. Fourth, each line holds a single fact about one part or one pair. Then save once. If the checker reports a problem, fix all lines of that kind together in the next save.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s3a2",
+   "notes": "run 5 stage 3 screen: slot 3 archetype 2",
+   "id": "g05107b26819",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "4955e5aa32c4",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s3a3": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.\n\nAfter drafting and before saving, run a trace against the description. Go through it paragraph by paragraph. For each sentence, confirm that every part, number with its unit, limit, condition, cause, delay, order of events and statement that something is unknown or not given appears in the notes. Add any that are missing. Copy numbers and units exactly as written, not rounded or converted. Next, check the draft against itself. Each condition names its trigger and its effect. Each cause names both ends. Each quantity says when or under what condition it holds. Nothing is stated twice. Nothing contradicts the text. Finally, check the form: one fact per line, short lines, no prose, and every line an element. Save once. The checker shows only the first problem, so after any report, scan the whole draft for the same fault and fix every instance in one save.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s3a3",
+   "notes": "run 5 stage 3 screen: slot 3 archetype 3",
+   "id": "g77e31f7eeb8",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "b2ddf54719f1",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s3a4": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.\n\nWhen the description covers four or more separate systems, check balance before saving. Count your facts for each system and compare that with how much the description says about it. A system whose facts are much fewer than its share of the text, or that lacks any quantity, condition or time it was given, is incomplete. Reread that system's passages and add what is missing as separate single-fact lines. Do not merge lines to save space.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s3a4",
+   "notes": "run 5 stage 3 screen: slot 3 archetype 4",
+   "id": "g3c9e216d40d",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "4de38ec54ec3",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s4a1": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "Answer from the notes only. Find the bullets that name what the question asks about, and read them before answering. Copy numbers and units exactly as noted. If the notes say a fact is unknown, or do not contain it, say it is unknown rather than guessing. Give a short, direct answer."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s4a1",
+   "notes": "run 5 stage 3 screen: slot 4 archetype 1",
+   "id": "g7e3f2f11588",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "757c8de49e32"
+   }
+  },
+  "s4a2": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "Work in three short steps before the final answer.\n1. Entity list: write the ids of every part the question mentions, using the full noted name with its prefix (for example Farm.T1). Add each part directly connected to them by an 'a -> b' bullet. Stop expanding after two hops unless the question asks for a longer chain.\n2. Edge table: one row per relevant 'a -> b' bullet, in the form 'source | target | relation'. For a cause or effect question, read the rows from source to target to get the chain.\n3. Input-output table: one row per entity in the form 'id | inputs (number unit) | outputs (number unit) | conditions that change them | time or delay'. Fill each cell only from bullets. Write '?' where no bullet gives it.\nThen compute or reason over the table rows only. Do not use a row whose id prefix differs from the entities in step 1. If a cell the answer needs is '?', answer that it is unknown or not given. End with one line: 'Answer: ...', with the number and unit where there is one."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s4a2",
+   "notes": "run 5 stage 3 screen: slot 4 archetype 2",
+   "id": "gb0f7a9ff5d7",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "99e98d805b0b"
+   }
+  },
+  "s4a3": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "Draft, then check, then answer.\nDraft: find the bullets that bear on the question and give a provisional answer. Quote each bullet you rely on, word for word.\nCheck each point below. Fix the draft whenever a check fails.\n- Source: every number, unit, condition and relation in the draft appears in a quoted bullet. Remove anything that comes only from general knowledge.\n- Identity: each quoted bullet is about the exact part asked about, not a similar name.\n- Conditions: the question's situation (state, mode, time, threshold) matches the condition attached to each quoted fact. If a different condition applies, find the bullet for that condition.\n- Chain: for cause, effect or 'what happens if' questions, trace each step from start to end and confirm that every step has its own bullet. A missing step means the effect is not established.\n- Arithmetic: redo any calculation and check that the units cancel to the unit asked for.\n- Order: for questions about sequence or delay, list the noted events with their times and confirm the order.\n- Gaps: if a needed fact is marked unknown or is absent, the answer is 'unknown' or 'not given'. Do not fill the gap with an estimate.\nThen give the final answer in one short line."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s4a3",
+   "notes": "run 5 stage 3 screen: slot 4 archetype 3",
+   "id": "g065e7bacfa8",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "a0c6871949db"
+   }
+  },
+  "s4a4": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": "If the notes cover more than one separate plant, network or service, first decide from the question's wording which one it is about. Then use only bullets whose names carry that one's prefix or that clearly belong to it, even when another one has a part with the same short name such as P1 or T1. If you cannot tell which one is meant, or its bullets lack the fact, answer that it is unknown."
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s4a4",
+   "notes": "run 5 stage 3 screen: slot 4 archetype 4",
+   "id": "g6883554e8d1",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "d8c549d36f18"
+   }
+  },
+  "s5a1": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "## THINGS\n- Tank: rain tank 500 L\n- Pump: feeds sprinklers\n## VALUES\n- Tank.level: 60% at start\n- Pump.flow: 20 L/min\n- Pump.power: unknown\n## RULES\n- if Tank.level < 10% then Pump stops\n## LINKS\n- Tank -> Pump: supplies\n## TIMING\n- Pump: runs 07:00 to 07:30 daily"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s5a1",
+   "notes": "run 5 stage 3 screen: slot 5 archetype 1",
+   "id": "g0d9be3d95a1",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "72027e3d523a",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s5a2": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "## THINGS\n- Bakery.O1: oven\n- Bakery.F1: cooling fan\n- Bakery.S1: temperature sensor\n- Hotel.B1: boiler\n- Hotel.R1: radiator loop\n## VALUES\n- Bakery.O1.temp_max: 250 C\n- Bakery.F1.speed: 1200 rpm when on\n- Bakery.S1.accuracy: unknown\n- Hotel.B1.output: 80 kW\n- Hotel.R1.flow: 3 L/s\n## RULES\n- R1: if Bakery.S1.temp > 260 C then Bakery.O1 shuts off\n- R2: if Hotel.B1.pressure > 3 bar then Hotel.B1 trips\n## LINKS\n- E1: Bakery.F1 -> Bakery.O1: cools\n- E2: Bakery.S1 -> Bakery.O1: measures\n- E3: Hotel.B1 -> Hotel.R1: heats\n- Bakery.O1.in: E1 E2\n- Hotel.R1.in: E3\n## TIMING\n- T1: Bakery.O1 preheat takes 15 min\n- T2: Hotel.B1 starts 05:30 daily\n- T3: R1 acts 10 s after trigger"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s5a2",
+   "notes": "run 5 stage 3 screen: slot 5 archetype 2",
+   "id": "g8e727964e73",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "e275d30320f8",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s5a3": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "## THINGS\n- Kiln.K1: electric kiln\n- Kiln.H1: heating element in K1\n- Kiln.D1: door switch\n- Kiln.C1: controller\n## VALUES\n- Kiln.K1.temp_max: 1300 C\n- Kiln.H1.power: 9 kW\n- Kiln.D1.state: closed at start\n- Kiln.C1.ramp: 100 C/h\n- Kiln.K1.volume: unknown (not given)\n## RULES\n- if Kiln.D1 opens then Kiln.H1 turns off\n- if Kiln.K1.temp > 1300 C then Kiln.C1 cuts Kiln.H1\n## LINKS\n- Kiln.C1 -> Kiln.H1: switches\n- Kiln.H1 -> Kiln.K1: heats\n- Kiln.D1 -> Kiln.C1: signals\n## TIMING\n- Kiln.C1.ramp_start: 08:00\n- Kiln.K1.cooling: unknown duration (not given)\n- Kiln.H1.off_delay: under 1 s after door opens"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s5a3",
+   "notes": "run 5 stage 3 screen: slot 5 archetype 3",
+   "id": "gfcab38359e8",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "51c24358bbe0",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "s5a4": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": [
+      "## THINGS\n- Dairy.C1: milk cooler\n- Lift.M1: lift motor\n- Pool.P1: filter pump\n- Pool.F1: sand filter\n- Rack.U1: backup battery\n- Rack.S1: server\n## VALUES\n- Dairy.C1.setpoint: 4 C\n- Lift.M1.load_max: 630 kg\n- Pool.P1.flow: 12 m3/h\n- Rack.U1.runtime: 20 min\n- Rack.U1.age: unknown\n## RULES\n- if Lift.M1.load > 630 kg then Lift.M1 stays stopped\n- if Dairy.C1.temp > 7 C then Dairy alarm sounds\n## LINKS\n- Pool.P1 -> Pool.F1: pushes water through\n- Rack.U1 -> Rack.S1: powers\n## TIMING\n- Pool.P1: runs 8 h per day\n- Dairy alarm: delay 10 min after trigger\n- Rack.U1: takes over within 1 s after mains loss"
+     ]
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 s5a4",
+   "notes": "run 5 stage 3 screen: slot 5 archetype 4",
+   "id": "g687981b74c9",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "2693f16002c6",
+    "answering": "c39fdeba1d8d"
+   }
+  }
+ },
+ "stage3_confirm": {
+  "D01": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [],
+   "operator": "seed",
+   "generation": 0,
+   "island": 0,
+   "name": "FACTS",
+   "notes": "key-value fact lines, one fact per bullet (research: compact facts and key-value lists aid lookup)",
+   "id": "gd6f99b53eb9",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D02": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES & LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "coarse"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 D02",
+   "notes": "run 5 stage 3 confirmation: {1: 's1a1', 2: '0'}",
+   "id": "g11277dc9f5a",
+   "gene_hashes": {
+    "core": "f89ce663cfd3",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "f48282426d1b",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D03": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES",
+       "LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "fine"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. When one sentence of the text holds several facts (a list of parts, two numbers, a cause and a time), write a separate bullet for each one. Never join facts with ';', 'and' or commas. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 D03",
+   "notes": "run 5 stage 3 confirmation: {1: '0', 2: 's2a4'}",
+   "id": "g69b87799cb1",
+   "gene_hashes": {
+    "core": "643b320bbe1a",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "cbabd381457d",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  },
+  "D04": {
+   "genes": {
+    "core": {
+     "kind": "sectioned",
+     "params": {
+      "headers": [
+       "THINGS",
+       "VALUES",
+       "RULES & LINKS",
+       "TIMING"
+      ],
+      "tags": false,
+      "granularity": "coarse"
+     }
+    },
+    "schema": {
+     "fields": []
+    },
+    "build_protocol": {
+     "kind": "one_shot",
+     "params": {}
+    },
+    "tool_interface": {
+     "errors": "first_only",
+     "submit": "tool_arg",
+     "patch": true
+    },
+    "query_layer": [],
+    "guidance": {
+     "text": "Write every fact as one short bullet in key-value form: 'name: value' (for example 'T1.level: 40% at start') or 'a -> b: relation' (for example 'P1 -> T1: fills'). One fact per bullet, no prose, no repetition. When one sentence of the text holds several facts (a list of parts, two numbers, a cause and a time), write a separate bullet for each one. Never join facts with ';', 'and' or commas. Put each fact under the section it belongs to.",
+     "examples": []
+    },
+    "numeric": {
+     "max_turns": 12,
+     "retries": 2,
+     "check_every": 1,
+     "samples": 50,
+     "tolerance": 0.05
+    },
+    "examples": {
+     "items": []
+    },
+    "answering": {
+     "text": ""
+    }
+   },
+   "parents": [
+    "gd6f99b53eb9"
+   ],
+   "operator": "stage",
+   "generation": 0,
+   "island": 0,
+   "name": "S3 D04",
+   "notes": "run 5 stage 3 confirmation: {1: 's1a1', 2: 's2a4'}",
+   "id": "g62833e9de85",
+   "gene_hashes": {
+    "core": "f89ce663cfd3",
+    "schema": "dad57f4b5e71",
+    "build_protocol": "837f6c1a8551",
+    "tool_interface": "fd25942aa40b",
+    "query_layer": "3281a75e498c",
+    "guidance": "cbabd381457d",
+    "numeric": "1737b3036f9b",
+    "examples": "8d71a6d2e4f4",
+    "answering": "c39fdeba1d8d"
+   }
+  }
+ }
+}

@@ -1,14 +1,29 @@
 # Describing Reality for AI
 
-*How evolution found better ways for a small AI to write down and reason about complex systems*
+*Which way of writing a system down helps a small AI reason about it, and why*
 
 **Read the white paper:** https://llmjester.github.io/describing-reality-for-ai/ (also as a PDF in `docs/`).
 
-This repository holds the public materials for the white paper:
+## The result in brief
 
-- **The paper** (`docs/`): the designed web edition, served by GitHub Pages, and its PDF.
-- **The winning format**: its genome, the exact prompts, a small script to run it with any model, and worked examples.
-- **The full data package**: every episode's result, every design's genome and lineage, each round's proofs and confirmations, the pre-registration, the decision log, the analysis code, and the item-generation code and seeds.
-- **The Reality Engine**: the evolution engine, separated from this problem so it can run on others.
+A small model (GPT-6 Luna) writes a system down as notes, then answers questions from its notes alone. Fifteen note
+formats sat one exam. **Short facts** (five headings, one short fact per line) won: **65% right on 720 sealed
+questions no AI had seen, against 49% for plain prose notes** (+0.163, 95% range 0.140 to 0.186). Twenty-five new
+versions of its parts were then tested in two rounds; none beat it, and adding rules or structure made it worse. On
+messy real-world documents no format did much better than prose. 43,995 pre-registered test runs in all.
 
-The experiment is still running. The paper is a draft until the run and its finals end; data and code are added when the results are final.
+## What is here
+
+| Folder | What it holds |
+| --- | --- |
+| `docs/` | The paper: the designed web edition (served by GitHub Pages) and its PDF |
+| `results/` | The run's results: `episodes.csv` (one row per scored test run: stage, design, item id, system size, score, whether the notes passed their check, tokens, seconds), `designs.json` (every design's genome), `new_parts/` (what the designer AI wrote, and the summary it was given), `analysis.json` (every pre-registered test, effect, range and verdict), `events.json` (the run's log), `COUNTS.json` |
+| `harness/` | The code that ran the experiment, with the pre-registration, the decision log and the lock (see `harness/README.md`) |
+
+The winning format, with a copy-paste prompt card, is in Appendix A of the paper.
+
+## What is not here
+
+No item text, questions, answer keys, notes or transcripts. Generated items can be rebuilt from their seeds with the
+code in `harness/`; the 500 hand-written items are held back for future runs (the factory that made them is
+included). The first sealed set was retired unused after a design change (V3-058); its 1,435 runs are not exported.

@@ -1,0 +1,66 @@
+{
+ "evidence": {
+  "winner": "FACTS",
+  "items": 480,
+  "score_generated": 0.66,
+  "score_by_k": {
+   "1": 0.753,
+   "2": 0.715,
+   "4": 0.648,
+   "8": 0.524
+  },
+  "builds": {
+   "checked": 480,
+   "failed_check": 53,
+   "failed_share": 0.11,
+   "failed_builds_by_problem": {
+    "more than one fact in one element": 46,
+    "element longer than N characters": 14,
+    "line is not an element (bullet or numbered line)": 1
+   },
+   "failed_by_k": {
+    "1": "0 of 120",
+    "2": "3 of 120",
+    "4": "10 of 120",
+    "8": "40 of 120"
+   }
+  },
+  "build_tool_calls_by_k": {
+   "1": {
+    "mean": 1.1,
+    "max": 3
+   },
+   "2": {
+    "mean": 1.4,
+    "max": 5
+   },
+   "4": {
+    "mean": 1.8,
+    "max": 7
+   },
+   "8": {
+    "mean": 3.1,
+    "max": 8
+   }
+  },
+  "output_tokens": {
+   "build": {
+    "mean": 3540,
+    "median": 2918,
+    "p90": 7844
+   },
+   "answer": {
+    "mean": 1482,
+    "median": 1339,
+    "p90": 2338
+   }
+  },
+  "max_turns": 12,
+  "tools": {
+   "save_tool": "write_model",
+   "save_replaces": true,
+   "check_feedback": "first_only"
+  }
+ },
+ "text": "WHAT IS KNOWN ABOUT THE CURRENT BEST DESIGN (before stage 3; generated items only; the builder is a small model)\n- Mean score (0 to 1) on the 480 generated items: 0.66.\n- Mean score by system size k (k = 1 is one system; k = 2, 4, 8 combine that many in one description): k=1: 0.753, k=2: 0.715, k=4: 0.648, k=8: 0.524.\n- Notes check: 53 of 480 builds (11.0%) ended with notes that failed the layout checker. Number of failed builds with each checker problem (a build can have several): more than one fact in one element: 46; element longer than 300 characters: 14; line is not an element (bullet or numbered line): 1. Failed builds by system size: k=1: 0 of 120, k=2: 3 of 120, k=4: 10 of 120, k=8: 40 of 120.\n- How the build tools work (from the design itself, not from stage 1 results): Each save replaces the whole notes; there is no append. So a part that asks the builder to save in several passes makes it rewrite everything written so far on every save. After each save, the builder is shown the first checker problem (with its line number) and the count of how many more problems remain. So fixing reported problems one save at a time uses up tool calls from the budget.\n- Tool calls while building the notes, by system size (no call is an automatic retry): k=1: mean 1.1, max 3, k=2: mean 1.4, max 5, k=4: mean 1.8, max 7, k=8: mean 3.1, max 8.\n- Output tokens per item: building the notes mean 3540, median 2918, 90th percentile 7844; answering mean 1482, median 1339, 90th percentile 2338.\n- Current tool-call budget for building (max_turns): 12.\n\nWHAT EARLIER STAGES TRIED (effect = mean score with the part changed minus the design it was compared with; 95% range; on generated items only)\n- stage 2, layout: -0.017 [-0.0242, -0.0089]; 124 characters; not kept (stage 2 changed every part at once, one version each)\n  text: {\"headers\": [\"SYSTEMS & PARTS\", \"QUANTITIES\", \"CAUSES & RULES\", \"TIMING\", \"UNKNOWNS\"], \"tags\": false, \"granularity\": \"fine\"}\n- stage 2, fact-writing rules: -0.035 [-0.0422, -0.0275]; 602 characters; not kept (stage 2 changed every part at once, one version each)\n  text: One fact per bullet, under 150 characters, no prose. Forms: 'name: value unit (condition)' e.g. 'Mill.P1.flow: 20 L/min when running'; 'a -> b: relation' e.g. 'Mill.P1 -> Mill.T1: fills'; 'if condition then effect' for rules. Never join two facts with ';', ',' lists or 'and': split them into separate bullets. When the text covers several systems, start every name with its system name. Copy numbers, units, limits and times exactly. If the text says something is unknown or not given, write 'name: unknown'. Write all notes in one save. If the checker reports a problem, split or shorten that bullet.\n- stage 2, answering: -0.043 [-0.0507, -0.0355]; 674 characters; not kept (stage 2 changed every part at once, one version each)\n  text: 1. Name the system and parts the question asks about. Find every bullet that mentions them, including the system-prefixed names.\n  2. Gather the values with units, rules and relations that apply. For cause or effect questions, follow the relation chain one link at a time.\n  3. For a calculation, write the formula, insert the noted numbers and check the units.\n  4. For timing, put the noted events in time order before answering.\n  5. Never use a value from another system whose part has a similar name.\n  6. If the notes mark the fact unknown or do not contain it, answer that it is unknown. Do not guess.\n  7. Give a short direct answer, with the number and unit where there is one.\n- stage 2, worked example: -0.003 [-0.0096, 0.0047]; 471 characters; not kept (stage 2 changed every part at once, one version each)\n  text: THINGS\n  - Farm.T1: water tank, 1000 L capacity\n  - Farm.P1: pump\n  - Farm.V1: drain valve on T1\n  - Lab.F1: freezer\n  VALUES\n  - Farm.T1.level: 40% at start\n  - Farm.P1.flow: 50 L/min when on\n  - Farm.V1.flow: unknown\n  - Lab.F1.setpoint: -20 C\n  RULES\n  - if Farm.T1.level > 90% then Farm.P1 stops\n  - if Lab.F1.temp > -15 C then Lab alarm sounds\n  LINKS\n  - Farm.P1 -> Farm.T1: fills\n  - Farm.T1 -> Farm.V1: drains through\n  TIMING\n  - Farm.P1: starts 06:00 daily\n  - Lab alarm: delay 5 min after trigger\n- stage 2, tool-call budget: +0.003 [-0.004, 0.0111]; 12 characters; not kept (stage 2 changed every part at once, one version each)\n  text: max_turns 24\n- Lesson from stage 2: its worked example was written in the old fact syntax but shown beside new fact-writing rules in some designs, so the two contradicted each other. From stage 3 on, every worked example is rewritten to match its design's own layout and fact-writing rules."
+}

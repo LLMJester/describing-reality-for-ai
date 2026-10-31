@@ -1,0 +1,98 @@
+[
+ {
+  "t": "2026-10-29T16:54:03",
+  "msg": "judge calibration: 100 answers re-graded by Opus, mean |difference| 0.0717, correlation 0.938"
+ },
+ {
+  "t": "2026-10-29T16:58:12",
+  "msg": "judge calibration: 100 answers re-graded by Opus, mean |difference| 0.0695, correlation 0.9395"
+ },
+ {
+  "t": "2026-10-29T16:58:12",
+  "msg": "stage 1 done: winner FACTS, runner-up A3 (tied at the top); hand-written top ONT_LOOSE"
+ },
+ {
+  "t": "2026-10-29T16:58:48",
+  "msg": "plus texts written and frozen (hash 2dab40bb9fc2e92b); waiting for the human's approval"
+ },
+ {
+  "t": "2026-10-29T22:13:49",
+  "msg": "paused: C:\\Users\\jsund\\OneDrive\\RPP Version 2\\rpp-v3\\state\\PAUSE present"
+ },
+ {
+  "t": "2026-10-29T22:14:04",
+  "msg": "V3-056: the + texts written without the stage 1 evidence were archived; Opus writes new ones"
+ },
+ {
+  "t": "2026-10-29T22:14:47",
+  "msg": "plus texts written and frozen (hash 9a641687b2cd30fa); waiting for the human's approval"
+ },
+ {
+  "t": "2026-10-29T22:39:47",
+  "msg": "paused: C:\\Users\\jsund\\OneDrive\\RPP Version 2\\rpp-v3\\state\\PAUSE present"
+ },
+ {
+  "t": "2026-10-29T22:40:04",
+  "msg": "the + texts written from an earlier evidence brief were archived (plus_superseded_1.json); Opus writes new ones"
+ },
+ {
+  "t": "2026-10-29T22:40:36",
+  "msg": "plus texts written and frozen (hash 4026134b9d7a7923); waiting for the human's approval"
+ },
+ {
+  "t": "2026-10-29T22:50:36",
+  "msg": "plus texts approved: stage 2 starts"
+ },
+ {
+  "t": "2026-10-30T11:18:24",
+  "msg": "stage 2 done: final design D18 (A+B-C-D-E+)"
+ },
+ {
+  "t": "2026-10-30T11:18:24",
+  "msg": "sealed set 'sealed' opened (720 items)"
+ },
+ {
+  "t": "2026-10-30T12:25:03",
+  "msg": "paused: C:\\Users\\jsund\\OneDrive\\RPP Version 2\\rpp-v3\\state\\PAUSE present"
+ },
+ {
+  "t": "2026-10-30T19:31:35",
+  "msg": "stage 2 verdict (gated retention rule): D01 (keeps the stage 1 winner; kept parts none); stage 3 next"
+ },
+ {
+  "t": "2026-10-30T19:34:05",
+  "msg": "stage 3: slot 5 (example) failed the checks (attempt 1): [\"candidate 4 adds what candidate 1 also has: '- farm.p1 -> farm.t1: fills'\", \"candidate 4 adds what candidate 3 also has: '- farm.p1 -> farm.t1: fills'\"]"
+ },
+ {
+  "t": "2026-10-30T19:34:44",
+  "msg": "stage 3 candidates written and frozen (hash 06b680a8baa958b4; lengths s1a1 100, s1a2 135, s1a3 129, s1a4 110, s2a1 432, s2a2 990, s2a3 831, s2a4 440, s3a1 394, s3a2 1078, s3a3 864, s3a4 440, s4a1 284, s4a2 998, s4a3 1224, s4a4 392, s5a1 264, s5a2 674, s5a3 602, s5a4 603); waiting for the human"
+ },
+ {
+  "t": "2026-10-30T19:44:44",
+  "msg": "stage 3 candidates approved: the screen starts"
+ },
+ {
+  "t": "2026-10-31T00:30:04",
+  "msg": "stage 3 screen done: advancing slot 1 s1a1, slot 2 s2a4"
+ },
+ {
+  "t": "2026-10-31T00:30:04",
+  "msg": "stage 3: the confirmation starts"
+ },
+ {
+  "t": "2026-10-31T01:53:35",
+  "msg": "stage 3 confirmation done: D01; the stages stop (no design beat the current best)"
+ },
+ {
+  "t": "2026-10-31T01:53:36",
+  "msg": "sealed set 'sealed2' opened (720 items)"
+ },
+ {
+  "t": "2026-10-31T04:02:13",
+  "msg": "final check done: 1_vs_plain_prose lead 0.163 [0.14, 0.1861] counted; 2_vs_hand_top lead 0.1643 [0.1373, 0.1913] counted; 3_vs_runner_up lead 0.023 [-0.002, 0.0481] no"
+ },
+ {
+  "t": "2026-10-31T04:02:13",
+  "msg": "real run complete"
+ }
+]

@@ -1,0 +1,66 @@
+{
+ "evidence": {
+  "winner": "FACTS",
+  "items": 480,
+  "score_generated": 0.657,
+  "score_by_k": {
+   "1": 0.772,
+   "2": 0.713,
+   "4": 0.631,
+   "8": 0.513
+  },
+  "builds": {
+   "checked": 480,
+   "failed_check": 55,
+   "failed_share": 0.115,
+   "failed_builds_by_problem": {
+    "more than one fact in one element": 41,
+    "element longer than N characters": 25,
+    "line is not an element (bullet or numbered line)": 1
+   },
+   "failed_by_k": {
+    "1": "0 of 120",
+    "2": "0 of 120",
+    "4": "3 of 120",
+    "8": "52 of 120"
+   }
+  },
+  "build_tool_calls_by_k": {
+   "1": {
+    "mean": 1.1,
+    "max": 3
+   },
+   "2": {
+    "mean": 1.4,
+    "max": 6
+   },
+   "4": {
+    "mean": 1.8,
+    "max": 5
+   },
+   "8": {
+    "mean": 3.0,
+    "max": 6
+   }
+  },
+  "output_tokens": {
+   "build": {
+    "mean": 3425,
+    "median": 2889,
+    "p90": 6949
+   },
+   "answer": {
+    "mean": 1487,
+    "median": 1348,
+    "p90": 2406
+   }
+  },
+  "max_turns": 12,
+  "tools": {
+   "save_tool": "write_model",
+   "save_replaces": true,
+   "check_feedback": "first_only"
+  }
+ },
+ "text": "- Mean score (0 to 1) on the 480 generated items: 0.657.\n- Mean score by system size k (k = 1 is one system; k = 2, 4, 8 combine that many in one description): k=1: 0.772, k=2: 0.713, k=4: 0.631, k=8: 0.513.\n- Notes check: 55 of 480 builds (11.5%) ended with notes that failed the layout checker. Number of failed builds with each checker problem (a build can have several): more than one fact in one element: 41; element longer than 300 characters: 25; line is not an element (bullet or numbered line): 1. Failed builds by system size: k=1: 0 of 120, k=2: 0 of 120, k=4: 3 of 120, k=8: 52 of 120.\n- How the build tools work (from the design itself, not from stage 1 results): Each save replaces the whole notes; there is no append. So a part that asks the builder to save in several passes makes it rewrite everything written so far on every save. After each save, the builder is shown the first checker problem (with its line number) and the count of how many more problems remain. So fixing reported problems one save at a time uses up tool calls from the budget.\n- Tool calls while building the notes, by system size (no call is an automatic retry): k=1: mean 1.1, max 3, k=2: mean 1.4, max 6, k=4: mean 1.8, max 5, k=8: mean 3.0, max 6.\n- Output tokens per item: building the notes mean 3425, median 2889, 90th percentile 6949; answering mean 1487, median 1348, 90th percentile 2406.\n- Current tool-call budget for building (max_turns): 12."
+}
