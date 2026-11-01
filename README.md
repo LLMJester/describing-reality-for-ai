@@ -8,9 +8,22 @@
 
 A small model (GPT-6 Luna) writes a system down as notes, then answers questions from its notes alone. Fifteen note
 formats sat one exam. **Short facts** (five headings, one short fact per line) won: **65% right on 720 sealed
-questions no AI had seen, against 49% for plain prose notes** (+0.163, 95% range 0.140 to 0.186). Twenty-five new
-versions of its parts were then tested in two rounds; none beat it, and adding rules or structure made it worse. On
-messy real-world documents no format did much better than prose. 43,995 pre-registered test runs in all.
+questions no AI had seen, against 49% for plain prose notes** (+0.163, 95% [cluster-bootstrap][cluster] range 0.140
+to 0.186). Twenty-five new versions of its parts were then tested in two rounds; none beat it, and adding rules or
+structure made it worse. On messy real-world documents no format did much better than prose. 43,995
+[pre-registered][prereg] test runs in all.
+
+The methods behind each verdict ([Hsu's comparisons with the best][hsu], [Holm's correction][holm], the [full
+factorial][factorial], the [winner's curse][curse], [fixed-sequence gatekeeping][gatekeeping]) are explained in
+the paper; each name above links to its source.
+
+[prereg]: https://doi.org/10.1073/pnas.1708274114
+[cluster]: https://doi.org/10.1111/j.1467-9868.2007.00593.x
+[hsu]: https://doi.org/10.1214/aos/1176346732
+[holm]: https://www.jstor.org/stable/4615733
+[factorial]: https://www.itl.nist.gov/div898/handbook/pri/section3/pri3331.htm
+[curse]: https://doi.org/10.1097/EDE.0b013e31818131e7
+[gatekeeping]: https://www.fda.gov/media/162416/download
 
 ## Two repositories
 
