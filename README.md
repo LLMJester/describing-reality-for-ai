@@ -7,11 +7,11 @@
 ## The result in brief
 
 A small model (GPT-6 Luna) writes a system down as notes, then answers questions from its notes alone. Fifteen note
-formats sat one exam. **Short facts** (five headings, one short fact per line) won: **65% right on 720 sealed
-questions no AI had seen, against 49% for plain prose notes** (+0.163, 95% [cluster-bootstrap][cluster] range 0.140
-to 0.186). Twenty-five new versions of its parts were then tested in two rounds; none beat it, and adding rules or
-structure made it worse. On messy real-world documents no format did much better than prose. 43,995
-[pre-registered][prereg] test runs in all.
+formats sat one exam. **Short facts** (five headings, one short fact per line) won: **65% of questions right on 720
+sealed items no AI had seen, against 49% for plain prose notes** (+0.163, 95% [cluster-bootstrap][cluster] range
+0.140 to 0.186). Twenty-five new versions of its parts were then tested in two rounds; none beat it, and adding rules
+or structure made it worse. On messy real-world documents no format did much better than prose. 43,995 test runs in
+all, each under rules locked before it ran ([pre-registration][prereg]).
 
 The methods behind each verdict ([Hsu's comparisons with the best][hsu], [Holm's correction][holm], the [full
 factorial][factorial], the [winner's curse][curse], [fixed-sequence gatekeeping][gatekeeping]) are explained in
