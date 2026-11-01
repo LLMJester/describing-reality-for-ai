@@ -24,6 +24,8 @@ The winning format, with a copy-paste prompt card, is in Appendix A of the paper
 
 ## What is not here
 
-No item text, questions, answer keys, notes or transcripts. Generated items can be rebuilt from their seeds with the
-code in `harness/`; the 500 hand-written items are held back for future runs (the factory that made them is
-included). The first sealed set was retired unused after a design change (V3-058); its 1,435 runs are not exported.
+No item text, questions, answer keys, notes or transcripts. The item generator is held back too: with it and the
+seeds, anyone could rebuild the answer keys of the sealed sets. The 500 hand-written items are held back for future
+runs (the factory that made them is included). `harness/` is for reading, not running: some of the earlier
+framework's modules are missing from it (see `harness/README.md`). The runnable, generic engine is
+[reality-engine](https://github.com/LLMJester/reality-engine). The first sealed set was retired unused after a design change (V3-058); its 1,435 runs are not exported.

@@ -33,9 +33,11 @@ Every change is in `rpp-v3/DECISIONS.md` (V3-042 to V3-058). `rpp-v3/state/PRERE
 | `rpp-v3/v3/` | The experiment: `run5.py` (engine), `analysis5.py` (all statistics), `plus5.py` (stage 2 parts), `run5_sets.py` (item sets), `episode.py` (two-phase run), `sandbox.py` (Docker), `hand5/` (hand-written item factory), `dashboard5/` (live dashboard) |
 | `rpp-v3/tests/` | The test suite (about 400 tests; models are faked) |
 | `rpp-v3/sandbox/` | The Docker image for model-written code |
-| `rpp-core/` | The read-only parts of the earlier framework that run 5 uses: item generators (`discovery/world`), the model-call layer, the judge and the representation tools (`tournament/arms`). Only the files run 5 opens are included; no data sets. |
+| `rpp-core/` | Prompts, the judge's rubric, the format registry and the A5 rule language's checker and compiler from the earlier framework. See [What is not here](#what-is-not-here) for its Python modules. |
 
 ## Running it
+
+This snapshot does not run as published (see [What is not here](#what-is-not-here)). This is how the run was run.
 
 Requirements (versions the run used): Python 3.12 with numpy 2.5; Docker 29 (the sandbox image builds itself);
 the Codex CLI 0.163 signed in to a ChatGPT plan with GPT-6 Luna; the Claude Code CLI 2.1 signed in to a Claude plan
@@ -60,5 +62,14 @@ python -m v3.dashboard5.server5 --port 8766 --mode real
 - The earlier framework's data sets and gold files.
 - The 500 hand-written items, unless this build says `hand_written_items_included: true` in `MANIFEST.json`. They
   can be held back for future runs; the factory that made them (`v3/hand5/`) is included.
+- **The item generator (`rpp-core/discovery/world`).** It is held back on purpose: with it and the published seeds,
+  anyone could rebuild the answer keys of the sealed sets, which would spoil them for future runs.
+- **The earlier framework's other Python modules**: the model-call layer (`harness/llm.py`), the judge
+  (`harness/judge/grade.py`, `harness/strip.py`), the item loader (`harness/run.py`) and the format code
+  (`tournament/arms/base.py`, `a1_prose.py` and the other arms). These were left out by a mistake in the file list:
+  it was made by watching which files run 5 opened, and Python read its compiled caches instead of these sources.
 
-Generated items, including the sealed set, are rebuilt from their seeds by `v3/run5_sets.py`.
+So this snapshot is for reading, not running: the test suite and the commands above stop at the first import of a
+missing module. The statistics (`v3/analysis5.py`) and the stage logic (`v3/run5.py`, `v3/stages5.py`) are complete
+as they ran. A runnable, generic version of the engine, with a check that it reproduces all 712 numbers in run 5's analysis, is
+[reality-engine](https://github.com/LLMJester/reality-engine).
