@@ -38,7 +38,7 @@ the paper; each name above links to its source.
 | Folder | What it holds |
 | --- | --- |
 | `docs/` | A mirror of the paper (served by GitHub Pages) and its PDF; the main copy is at https://therealityengine.ca/paper/ |
-| `results/` | The run's results: `episodes.csv` (one row per scored test run: stage, design, item id, system size, score, whether the notes passed their format check, blank for designs with no check, tokens, seconds), `designs.json` (every design's genome), `new_parts/` (what the designer AI wrote, and the summary it was given), `analysis.json` (every pre-registered test, effect, range and verdict), `events.json` (the run's log), `COUNTS.json` |
+| `results/` | The run's results: `episodes.csv` (one row per scored test run: stage, design, item id, system size, score, whether the notes passed their format check, blank for designs with no check; `item_set = hand_written` is the 500 realistic documents, a name kept from the run's code, tokens, seconds), `designs.json` (every design's genome), `new_parts/` (what the designer AI wrote, and the summary it was given), `analysis.json` (every pre-registered test, effect, range and verdict), `events.json` (the run's log), `COUNTS.json` |
 | `rules/` | The rules the run was locked to, each before it was used (stages 3 to 5 were added and locked after stage 2, V3-058): the pre-registration (`PREREG.md`), the dated decision log (`DECISIONS.md`), the run 5 design documents and the lock (`PREREG.LOCK`, the hashes of the code and rules) |
 
 The winning format, with a copy-paste prompt card, is in Appendix A of the paper.
@@ -47,4 +47,4 @@ The winning format, with a copy-paste prompt card, is in Appendix A of the paper
 
 No item text, questions, answer keys, notes or transcripts, and not the item generator: with it, anyone could
 rebuild the answer keys of the sealed sets. The 500 realistic documents are held back for future runs. The first
-sealed set was retired unused after a design change (V3-058); its 1,435 runs are not exported.
+sealed set was retired after a design change and never analyzed (V3-058); its 1,435 runs are not exported.
